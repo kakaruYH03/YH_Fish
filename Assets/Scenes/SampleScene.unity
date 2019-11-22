@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 410576572}
   - component: {fileID: 410576571}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Continu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ Animator:
   m_GameObject: {fileID: 410576569}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3a7c706e051677f47b89f3afa9f343d4, type: 2}
+  m_Controller: {fileID: 9100000, guid: b1059d0422d5b8a44853ef5edcb60cda, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -636,7 +636,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 900792130}
-  - {fileID: 2112287301}
   m_Father: {fileID: 316832387}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1466,14 +1465,15 @@ RectTransform:
   m_Children:
   - {fileID: 2134833478}
   - {fileID: 410576570}
+  - {fileID: 2112287301}
   m_Father: {fileID: 453807990}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 800, y: 1300}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900792131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,6 +2322,7 @@ GameObject:
   - component: {fileID: 1375027121}
   - component: {fileID: 1375027120}
   - component: {fileID: 1375027119}
+  - component: {fileID: 1375027122}
   m_Layer: 5
   m_Name: StartText
   m_TagString: Untagged
@@ -2403,6 +2404,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375027117}
   m_CullTransparentMesh: 0
+--- !u!95 &1375027122
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375027117}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce8593afc87dd1c40954865829fad186, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1791928910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,12 +3059,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 453807990}
-  m_RootOrder: 1
+  m_Father: {fileID: 900792130}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 500}
+  m_AnchoredPosition: {x: 0, y: 650}
   m_SizeDelta: {x: 1007, y: 598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2112287302
@@ -3284,7 +3304,7 @@ GameObject:
   - component: {fileID: 2134833482}
   - component: {fileID: 2134833483}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ReGame Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
