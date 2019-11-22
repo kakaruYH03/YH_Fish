@@ -23,7 +23,6 @@ public class Fish : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()

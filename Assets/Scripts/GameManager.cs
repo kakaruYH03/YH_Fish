@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +8,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] Fish fish;
     [SerializeField] GameObject pipes;
+    [SerializeField] GameObject main;
+    [SerializeField] GameObject socreObject;
+    [SerializeField] Text startText;
+    [SerializeField] GameObject gameOver;
 
     int score;
 
@@ -20,11 +23,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameOver.SetActive(false);
         pipes.SetActive(false);
-
+        socreObject.SetActive(false);
         state = State.READY;
         fish.SetKinematic(true);
     }
+
 
     void Update()
     {
@@ -34,16 +39,20 @@ public class GameManager : MonoBehaviour
                 if (Input.GetButtonDown("Fire1"))
                 {
                     GameStart();
+                    main.SetActive(false);
+                    startText.gameObject.SetActive(false);
+                    socreObject.SetActive(true);
                 }
                 break;
             case State.PLAY:
-                if (fish.IsDead) GameOver();
+                if (fish.IsDead)
+                {
+                    GameOver();
+                    gameOver.SetActive(true);
+                }
                 break;
             case State.GAMEOVER:
-                if (Input.GetButtonDown("Fire1"))
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                }
+                                                                 
                 break;
         }
     }
