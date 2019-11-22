@@ -6,12 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Text scoreText;
+    [SerializeField] Text MainText;
     [SerializeField] Fish fish;
     [SerializeField] GameObject pipes;
     [SerializeField] GameObject main;
     [SerializeField] GameObject socreObject;
     [SerializeField] Text startText;
     [SerializeField] GameObject gameOver;
+
+    public Text bestScore;
 
     int score;
 
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Load();
         gameOver.SetActive(false);
         pipes.SetActive(false);
         socreObject.SetActive(false);
@@ -47,7 +51,12 @@ public class GameManager : MonoBehaviour
             case State.PLAY:
                 if (fish.IsDead)
                 {
-                    GameOver();
+                    if (score > PlayerPrefs.GetInt(Constant.kScore))
+                    {
+                        Save();
+                    }                    
+                    Load();
+                    GameOver();                    
                     gameOver.SetActive(true);
                 }
                 break;
@@ -80,6 +89,17 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = "Score : " + score.ToString();
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt(Constant.kScore, score);
+    }
+
+    public void Load()
+    {
+        bestScore.text = "Best Score : " + PlayerPrefs.GetInt(Constant.kScore).ToString();
+        MainText.text = "Best Score : " + PlayerPrefs.GetInt(Constant.kScore).ToString();
     }
 }

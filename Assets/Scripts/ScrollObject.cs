@@ -16,7 +16,7 @@ public class ScrollObject : MonoBehaviour
         {
             transform.Translate(-1 * (endPostion - startPostion), 0, 0);
 
-            //SendMessage("ChangePosition", SendMessageOptions.DontRequireReceiver);
+            SendMessage("ChangePosition", SendMessageOptions.DontRequireReceiver);
         }
     }
 }
