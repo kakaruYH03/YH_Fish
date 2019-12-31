@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ReButton : MonoBehaviour
 {
     public void ReGame()
     {
